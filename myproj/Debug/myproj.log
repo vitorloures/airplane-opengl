@@ -1,0 +1,24 @@
+﻿  main.cpp
+  myLight.cpp
+  myLights.cpp
+  myMaterial.cpp
+  mySubObject.cpp
+  myObject.cpp
+  myScene.cpp
+  myShader.cpp
+  myShaders.cpp
+  myTexture.cpp
+main.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_GetWindowSize referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_DestroyWindow referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_GL_SetAttribute referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_GL_CreateContext referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_GL_SwapWindow referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_GL_DeleteContext referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_GetKeyboardState referenced in function "void __cdecl processEvents(union SDL_Event)" (?processEvents@@YAXTSDL_Event@@@Z)
+main.obj : error LNK2019: unresolved external symbol _SDL_GetMouseState referenced in function "void __cdecl processEvents(union SDL_Event)" (?processEvents@@YAXTSDL_Event@@@Z)
+main.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function _main
+.\libs\debug\SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-IN4I24-19\Debug\myproj.exe : fatal error LNK1120: 12 unresolved externals
