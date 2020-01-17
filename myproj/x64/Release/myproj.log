@@ -1,38 +1,12 @@
-﻿  Image.cpp
-  main.cpp
-  myCamera.cpp
-  myFBO.cpp
-  myLight.cpp
-  myLights.cpp
-  myMaterial.cpp
-  myPhysics.cpp
-  mySubObject.cpp
-  myObject.cpp
-  myScene.cpp
-  myShader.cpp
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(169,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file myPhysics.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(170,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file myPhysics.cpp)
-  myShaders.cpp
-  myTexture.cpp
-  myVAO.cpp
-  myVBO.cpp
-  myFlight.cpp
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(171,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file myPhysics.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(169,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file myScene.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(170,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file myScene.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(171,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file myScene.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\myPhysics.cpp(32,138): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\myPhysics.cpp(54,216): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\myPhysics.cpp(101,48): warning C4244: 'argument': conversion from 'double' to 'btScalar', possible loss of data
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(169,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file main.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(170,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file main.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(171,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar' (compiling source file main.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\myFlight.h(12,28): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file main.cpp)
-C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\myFlight.h(12,28): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file myFlight.cpp)
+﻿  main.cpp
+C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(169,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(170,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\include\Bullet3\LinearMath\btIDebugDraw.h(171,1): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\myproj\myFlight.h(12,28): warning C4305: 'initializing': truncation from 'double' to 'float'
   Generating code
-  2134 of 2150 functions (99.3%) were compiled, the rest were copied from previous compilation.
-    41 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  42 of 2150 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    73 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 BulletCollision.lib(btCollisionAlgorithm.obj) : warning LNK4099: PDB 'BulletCollision.pdb' was not found with 'BulletCollision.lib(btCollisionAlgorithm.obj)' or at 'C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\x64\Release\BulletCollision.pdb'; linking object as if no debug info
 BulletCollision.lib(btDbvt.obj) : warning LNK4099: PDB 'BulletCollision.pdb' was not found with 'BulletCollision.lib(btDbvt.obj)' or at 'C:\Users\vitin\OneDrive\Area_de_Trabalho\opengl-VitorStelaDhanashri\x64\Release\BulletCollision.pdb'; linking object as if no debug info

@@ -144,8 +144,9 @@ void processEvents(SDL_Event current_event)
 			flight.rightRoll(scene["airplane"], cam1);
 			physics.setModelMatrix(scene["airplane"]);
 		}
-		if (current_event.key.keysym.sym == SDLK_v)
+		if (current_event.key.keysym.sym == SDLK_p) 
 			crystalballorfirstperson_view = !crystalballorfirstperson_view;
+		
 		else if (current_event.key.keysym.sym == SDLK_o)
 		{
 			//nfdchar_t *outPath = NULL;
@@ -325,6 +326,7 @@ int main(int argc, char *argv[])
 	// display loop
 	while (!quit)
 	{
+		std::cout << crystalballorfirstperson_view;
 		if (windowsize_changed)
 		{
 			SDL_GetWindowSize(window, &cam1->window_width, &cam1->window_height);
@@ -358,10 +360,21 @@ int main(int argc, char *argv[])
 		curr_shader->start();
 
 		// cockpit vision
-		scene["airplane"]->model_matrix = glm::mat4(1.0f);
-		scene["airplane"]->model_matrix = glm::rotate(scene["airplane"]->model_matrix, 3.14f, glm::vec3(0, 1, 0));
-		scene["airplane"]->model_matrix = glm::translate(scene["airplane"]->model_matrix, glm::vec3(0.8f, -2.4f, -7));
-		scene["airplane"]->model_matrix = glm::inverse(cam1->viewMatrix()) * scene["airplane"]->model_matrix;
+		if (crystalballorfirstperson_view)
+		{
+			scene["airplane"]->model_matrix = glm::mat4(1.0f);
+			scene["airplane"]->model_matrix = glm::rotate(scene["airplane"]->model_matrix, 3.14f, glm::vec3(0, 1, 0));
+			scene["airplane"]->model_matrix = glm::translate(scene["airplane"]->model_matrix, glm::vec3(0.8f, -2.4f, -7));
+			scene["airplane"]->model_matrix = glm::inverse(cam1->viewMatrix()) * scene["airplane"]->model_matrix;
+		}
+		// 3rd person vision
+		else 
+		{
+			scene["airplane"]->model_matrix = glm::mat4(1.0f);
+			scene["airplane"]->model_matrix = glm::rotate(scene["airplane"]->model_matrix, 3.14f, glm::vec3(0, 1, 0));
+			scene["airplane"]->model_matrix = glm::translate(scene["airplane"]->model_matrix, glm::vec3(0.8f, -2.4f, 50));
+			scene["airplane"]->model_matrix = glm::inverse(cam1->viewMatrix()) * scene["airplane"]->model_matrix;
+		}
 
 		scene["airplane"]->displayObjects(curr_shader, view_matrix);
 
