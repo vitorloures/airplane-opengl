@@ -15,9 +15,12 @@ using namespace std;
 
 myCamera::myCamera()
 {
-	camera_eye = DEFAULT_CAMERA_EYE;
-	camera_up = DEFAULT_CAMERA_UP;
-	camera_forward = DEFAULT_CAMERA_FORWARD;
+	//camera_eye = glm::normalize(DEFAULT_CAMERA_EYE);
+	//camera_up = glm::normalize(DEFAULT_CAMERA_UP);
+
+	camera_eye = glm::vec3(-0.954440, 0.033330, 0.296535);
+	camera_up - glm::vec3(0.033330, 0.954440, 0.000000);
+	camera_forward = glm::normalize(DEFAULT_CAMERA_FORWARD);
 
 	fovy = DEFAULT_FOVY;
 	zNear = DEFAULT_zNEAR;

@@ -137,9 +137,9 @@ void processEvents(SDL_Event current_event)
 			physics.setModelMatrix(scene["airplane"]);
 		}
 		
-		
 		if (current_event.key.keysym.sym == SDLK_d)
 			cam1->turnRight(DEFAULT_LEFTRIGHTTURN_MOVEMENT_STEPSIZE);
+		
 		if (current_event.key.keysym.sym == SDLK_RIGHT) {
 			flight.rightRoll(scene["airplane"], cam1);
 			physics.setModelMatrix(scene["airplane"]);
@@ -304,10 +304,10 @@ int main(int argc, char *argv[])
 
 	obj = new myObject();
 	obj->readObjects("models/land/Stena.obj", true, false);
-	obj->scaleObject(20, 20, 20);
+	obj->scaleObject(40, 40, 40);
 	obj->createmyVAO();
 	scene.addObject(obj, "Stena");
-	physics.addObject(obj, myPhysics::CONVEX, btCollisionObject::CF_CUSTOM_MATERIAL_CALLBACK);
+	physics.addObject(obj, myPhysics::CONCAVE, btCollisionObject::CF_CUSTOM_MATERIAL_CALLBACK);
 
 
 	/**************************SETTING UP OPENGL SHADERS ***************************/
@@ -326,7 +326,6 @@ int main(int argc, char *argv[])
 	// display loop
 	while (!quit)
 	{
-		std::cout << crystalballorfirstperson_view;
 		if (windowsize_changed)
 		{
 			SDL_GetWindowSize(window, &cam1->window_width, &cam1->window_height);

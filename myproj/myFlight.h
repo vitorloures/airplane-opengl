@@ -12,6 +12,10 @@ class myFlight
 	float desaceleration = 0.4;
 	float maxSpeed = 10.0;
 	float minSpeed = 1.0;
+	float deltaRoll = 1.5;
+	float deltaPitch = 0.5;
+	float deltaYaw = 1.0;
+
 public:
 
 		void upPitch(myObject*, myCamera*);
