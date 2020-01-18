@@ -18,9 +18,10 @@ myCamera::myCamera()
 	//camera_eye = glm::normalize(DEFAULT_CAMERA_EYE);
 	//camera_up = glm::normalize(DEFAULT_CAMERA_UP);
 
-	camera_eye = glm::vec3(-0.954440, 0.033330, 0.296535);
-	camera_up - glm::vec3(0.033330, 0.954440, 0.000000);
-	camera_forward = glm::normalize(DEFAULT_CAMERA_FORWARD);
+	camera_eye = glm::vec3(0, 0.949095, 0.31499);
+	camera_up - glm::vec3(0.949095, -0, 0);
+	camera_forward = glm::vec3(0, 0, -1);
+	pos = glm::vec3(0, 0, 0);
 
 	fovy = DEFAULT_FOVY;
 	zNear = DEFAULT_zNEAR;
@@ -36,9 +37,10 @@ myCamera::~myCamera()
 
 void myCamera::reset()
 {
-	camera_eye = DEFAULT_CAMERA_EYE;
-	camera_up = DEFAULT_CAMERA_UP;
-	camera_forward = DEFAULT_CAMERA_FORWARD;
+	camera_eye = glm::vec3(0, 0.949095, 0.31499);
+	camera_up - glm::vec3(0.949095, -0, 0);
+	camera_forward = glm::vec3(0, 0, -1);
+	pos = glm::vec3(0, 0, 0);
 
 	fovy = DEFAULT_FOVY;
 	zNear = DEFAULT_zNEAR;
@@ -119,17 +121,19 @@ glm::mat4 myCamera::projectionMatrix() const
 
 glm::mat4 myCamera::viewMatrix() const
 {
-	return glm::lookAt(camera_eye, camera_eye + camera_forward, camera_up);
+	return glm::lookAt(camera_eye + pos, camera_eye + pos + camera_forward, camera_up);
 }
 
 void myCamera::moveForward(float size)
 {
-	camera_eye += size * camera_forward;
+	//camera_eye += size * camera_forward;
+	pos += size * camera_forward;
 }
 
 void myCamera::moveBack(float size)
 {
-	camera_eye -= size * camera_forward;
+	//camera_eye -= size * camera_forward;
+	pos -= size * camera_forward;
 }
 
 void myCamera::turnLeft(float size)

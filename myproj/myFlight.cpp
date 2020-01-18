@@ -5,16 +5,29 @@
 
 #define PI 3.14159265
 
+/*double getNorm(glm::vec3 vec) {
+	return sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
+}*/
+
 void myFlight::upPitch(myObject* myPlane, myCamera* cam1) {
 	
 	//forwardVector = (forwardVector * cos(pitch)) + (upVector * sin(pitch))
 	//upVector = forwardVector x rightVector
 
+	/*
+	glm::vec3 forward = glm::normalize(cam1->camera_forward) * cosf(deltaPitch * PI / 180.0) /
+		+ glm::normalize(cam1->camera_up) * sinf(deltaPitch * PI / 180.0);
+	glm::vec3 up = glm::normalize(glm::cross(cam1->camera_forward, cam1->camera_eye));
+	double scalar_forward = glm::length(cam1->camera_forward);
+	double scalar_up = glm::length(cam1->camera_up);
+
+	cam1->camera_forward += scalar_forward * forward;
+	cam1->camera_up += scalar_up * up;
+	*/
+
 	cam1->camera_forward = glm::normalize(cam1->camera_forward * cosf(deltaPitch * PI / 180.0) + cam1->camera_up * sinf(deltaPitch * PI / 180.0));
 	cam1->camera_up = glm::cross(cam1->camera_forward, cam1->camera_eye);
 
-	
-	
 	//cam1->firstperson_rotateView(0, -1);
 
 	/*myPlane->model_matrix = glm::mat4(1.0f);

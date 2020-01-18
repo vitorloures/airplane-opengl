@@ -272,8 +272,6 @@ int main(int argc, char *argv[])
 	checkOpenGLInfo(true);
 
 
-
-
 	/**************************INITIALIZING LIGHTS ***************************/
 	scene.lights = new myLights();
 	scene.lights->lights.push_back(new myLight(glm::vec3(1, 0, 0), glm::vec3(0.5, 0.5, 0.5), myLight::POINTLIGHT));
@@ -282,14 +280,6 @@ int main(int argc, char *argv[])
 
 	/**************************INITIALIZING OBJECTS THAT WILL BE DRAWN ***************************/
 	myObject *obj;
-
-	//the big christmas scene.
-	/*obj = new myObject();
-	obj->readObjects("models/Road_Sign/Road_Sign/RoadSign/RoadSign.obj", true, false);
-	obj->createmyVAO();
-	scene.addObject(obj, "road");
-	physics.addObject(obj, myPhysics::CONCAVE, btCollisionObject::CF_STATIC_OBJECT, 0.0f, 0.7f);
-	*/
 	
 	// airplane
 	obj = new myObject();
@@ -301,7 +291,6 @@ int main(int argc, char *argv[])
 	physics.setModelMatrix(scene["airplane	"]);
 	
 	// scene
-
 	obj = new myObject();
 	obj->readObjects("models/land/Stena.obj", true, false);
 	obj->scaleObject(40, 40, 40);
@@ -322,6 +311,9 @@ int main(int argc, char *argv[])
 
 	myShader *curr_shader;
 	physics.setTime(SDL_GetPerformanceCounter() / static_cast<double>(SDL_GetPerformanceFrequency()));
+
+	//((btRigidBody*)physics[scene["airplane"]])->setMotionState(new btDefaultMotionState(t));
+	//((btRigidBody*)physics[scene["airplane"]])->setLinearVelocity(btVector3(cam1->camera_forward.x * 60, cam1->camera_forward.y * 60, cam1->camera_forward.z * 60));
 	
 	// display loop
 	while (!quit)
@@ -331,6 +323,13 @@ int main(int argc, char *argv[])
 			SDL_GetWindowSize(window, &cam1->window_width, &cam1->window_height);
 			windowsize_changed = false;
 		}
+		/*
+		cam1->camera_eye = glm::normalize(cam1->camera_eye);
+		cam1->camera_forward = glm::normalize(cam1->camera_forward);
+		cam1->camera_up = glm::normalize(cam1->camera_up);
+		*/
+
+		//cam1->print(); 
 
 		//Computing transformation matrices. Note that model_matrix will be computed and set in the displayScene function for each object separately
 		glViewport(0, 0, cam1->window_width, cam1->window_height);
@@ -382,7 +381,7 @@ int main(int argc, char *argv[])
 		scene["Stena"]->model_matrix = glm::translate(scene["Stena"]->model_matrix, glm::vec3(0, 20, -1000.1f));
 		scene["Stena"]->displayObjects(curr_shader, view_matrix);
 		/*-----------------------*/
-		//cam1->moveForward(movement_stepsize);
+		cam1->moveForward(flight.getVelocity());
 
 		SDL_GL_SwapWindow(window);
 

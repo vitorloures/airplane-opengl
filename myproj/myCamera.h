@@ -8,6 +8,8 @@ public:
 	glm::vec3 camera_up;
 	glm::vec3 camera_forward;
 
+	glm::vec3 pos;
+
 	//Projection parameters
 	float fovy;
 	float zNear;

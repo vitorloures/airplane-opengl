@@ -27,5 +27,6 @@ public:
 		float getVelocity();
 		void acelerate();
 		void desacelerate();
+		double getNorm(glm::vec3 vec);
 
 };
