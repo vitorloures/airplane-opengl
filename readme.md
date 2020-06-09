@@ -1,3 +1,5 @@
+OpenGL project for a ESIEE PARIS discipline. The objects point cloud were obtainned from open source project. Airplane physics and motion were developed. 
+
 Welcome to VitorStelaDhanashri airplane game!
 
 1) To start press r
@@ -7,3 +9,5 @@ Welcome to VitorStelaDhanashri airplane game!
 5) P button alternates between first person (cockpit) and third person camera.
 
 Have fun!
+
+![](airplane.JPG)
